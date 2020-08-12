@@ -1,250 +1,405 @@
 {
 	"colors": {
-		"desc": "MUI colors are accessible through the <b>colors</b> property of the MUI object.<br><h3>Base color object<h3><div class='samp'>&nbsp;MUI.colors.red</div><div class='samp'>&nbsp;MUI.colors.pink</div><div class='samp'>&nbsp;MUI.colors.purple</div><div class='samp'>&nbsp;MUI.colors.deepPurple</div><div class='samp'>&nbsp;MUI.colors.indigo</div><div class='samp'>&nbsp;MUI.colors.blue</div><div class='samp'>&nbsp;MUI.colors.lightBlue</div><div class='samp'>&nbsp;MUI.colors.cyan</div><div class='samp'>&nbsp;MUI.colors.green</div><div class='samp'>&nbsp;MUI.colors.lightGreen</div><div class='samp'>&nbsp;MUI.colors.lime</div><div class='samp'>&nbsp;MUI.colors.yellow</div><div class='samp'>&nbsp;MUI.colors.amber</div><div class='samp'>&nbsp;MUI.colors.orange</div> <div class='samp'>&nbsp;MUI.colors.deepOrange</div><div class='samp'>&nbsp;MUI.colors.brown</div><div class='samp'>&nbsp;MUI.colors.gray</div><div class='samp'>&nbsp;MUI.colors.blueGray</div><br><br><i>Tip. To avoid longer lines assign the color set to a variable e.g. example</i><div class='samp'>&nbsp;var gray = MUI.colors.blueGray</div><br><br>To select a color and shading choose the right property of the base color objects: <i>lighten4</i>, <i>lighten3</i>, <i>lighten2</i>, <i>lighten1</i>, <i>darken1</i>, <i>darken2</i>, <i>darken3</i>, <i>darken4</i>.",
+		"desc": "MUI colors are accessible through the <b>colors</b> property of the MUI object.<br><h3>Base color objects<h3><div class='samp'>&nbsp;MUI.colors.red</div><div class='samp'>&nbsp;MUI.colors.pink</div><div class='samp'>&nbsp;MUI.colors.purple</div><div class='samp'>&nbsp;MUI.colors.deepPurple</div><div class='samp'>&nbsp;MUI.colors.indigo</div><div class='samp'>&nbsp;MUI.colors.blue</div><div class='samp'>&nbsp;MUI.colors.lightBlue</div><div class='samp'>&nbsp;MUI.colors.cyan</div><div class='samp'>&nbsp;MUI.colors.green</div><div class='samp'>&nbsp;MUI.colors.lightGreen</div><div class='samp'>&nbsp;MUI.colors.lime</div><div class='samp'>&nbsp;MUI.colors.yellow</div><div class='samp'>&nbsp;MUI.colors.amber</div><div class='samp'>&nbsp;MUI.colors.orange</div> <div class='samp'>&nbsp;MUI.colors.deepOrange</div><div class='samp'>&nbsp;MUI.colors.brown</div><div class='samp'>&nbsp;MUI.colors.gray</div><div class='samp'>&nbsp;MUI.colors.blueGray</div><br><br><i>Tip. To avoid longer lines assign the color set to a variable e.g. example</i><div class='samp'>&nbsp;var gray = MUI.colors.blueGray</div><br><br>To select a color and shading choose the right property of the base color objects: <i>lighten4</i>, <i>lighten3</i>, <i>lighten2</i>, <i>lighten1</i>, <i>darken1</i>, <i>darken2</i>, <i>darken3</i>, <i>darken4</i>.",
         "isval": true,
 		"name": "colors",
 		"retval": "obj",
 		"shortDesc": "colors"
-	},
+    },
 	"CreateAlert": {
 		"abbrev": "alr",
-		"desc": "CreateAlert",
+		"desc": "A nice pop-up at the top of your current layout",
 		"name": "CreateAlert",
-		"pNames": ["t", "e", "i"],
-		"pTypes": ["?", "?", "?"],
+		"pNames": ["text", "icon", "color"],
+		"pTypes": ["str-Popup text", "str-Material icon", "str_col"],
 		"retval": "obj",
 		"shortDesc": "CreateAlert",
-		"subf": {}
+		"subf": {
+            "Destroy":{
+                "abbrev": "",
+				"desc": "Destroys the popup object.",
+				"name": "Destroy",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Destroy",
+				"subf": {}
+            },
+            "GetVisibility":"#1672373665",
+            "Hide":"#5372805812",
+            "SetOnClose": {
+                "abbrev": "",
+				"desc": "Calls a function when alert is close",
+				"name": "SetOnClose",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (boolean) if x-button is click."],
+				"shortDesc": "SetOnClose",
+				"subf": {}
+            },
+            "SetText":"#8207502354",
+            "Show":"#1243391562"
+        }
 	},
 	"CreateAlertSimple": {
 		"abbrev": "als",
-		"desc": "CreateAlertSimple",
+		"desc": "Create a simple alert with a single button.",
 		"name": "CreateAlertSimple",
-		"pNames": ["t", "e"],
-		"pTypes": ["?", "?"],
+		"pNames": ["text", "btnText", "color"],
+		"pTypes": ["str-Text of the alert", "str-Button text. Default is OKAY", "str_col-Optional"],
 		"retval": "obj",
 		"shortDesc": "CreateAlertSimple",
 		"subf": {
-			"GetVisibility": "#1672373665",
-			"SetOnTouchOK": {
-				"abbrev": "",
-				"desc": "SetOnTouchOK",
-				"name": "SetOnTouchOK",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnTouchOK",
+			"Destroy":{
+                "abbrev": "",
+				"desc": "Destroys the popup object.",
+				"name": "Destroy",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Destroy",
 				"subf": {}
-			}
-		}
-	},
-	"CreateAlertStylish": {
-		"abbrev": "als",
-		"desc": "CreateAlertStylish",
-		"name": "CreateAlertStylish",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateAlertStylish",
-		"subf": {
-			"GetVisibility": "#1672373665",
-			"SetOnTouchOK": {
-				"abbrev": "",
-				"desc": "SetOnTouchOK",
-				"name": "SetOnTouchOK",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnTouchOK",
+            },
+            "GetVisibility":"#1672373665",
+            "Hide":"#5372805812",
+            "SetOnTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when button is click",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (boolean) if button is click."],
+				"shortDesc": "SetOnTouch",
 				"subf": {}
-			}
+            },
+            "SetText":"#8207502354",
+            "Show":"#1243391562"
 		}
-	},
+    },
 	"CreateAppBar": {
 		"abbrev": "apb",
-		"desc": "CreateAppBar",
+		"desc": "The most common type of material design app bar.",
 		"name": "CreateAppBar",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["title", "leadingIcon", "controls"],
+		"pTypes": ["str-Title text", "str-A material font icon for the leading control", "str-A comma separated material icon font for the right controls"],
 		"retval": "obj",
 		"shortDesc": "CreateAppBar",
 		"subf": {
-			"AppBar": {
-				"desc": "AppBar",
-				"isval": true,
-				"name": "AppBar",
-				"retval": "?",
-				"shortDesc": "AppBar"
-			},
 			"SetMenuIcon": {
 				"abbrev": "",
-				"desc": "SetMenuIcon",
+				"desc": "Sets a new heading icon",
 				"name": "SetMenuIcon",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newIcon"],
+				"pTypes": ["str-New material icon font"],
 				"shortDesc": "SetMenuIcon",
 				"subf": {}
 			},
 			"SetMenuIconColor": {
 				"abbrev": "",
-				"desc": "SetMenuIconColor",
+				"desc": "Change the color of the heading icon",
 				"name": "SetMenuIconColor",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newColor"],
+				"pTypes": ["str_col-New color of the heading icon"],
 				"shortDesc": "SetMenuIconColor",
 				"subf": {}
 			},
 			"SetOnControlTouch": {
 				"abbrev": "",
-				"desc": "SetOnControlTouch",
+				"desc": "Calls a function when the right controls are click",
 				"name": "SetOnControlTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Pasess (btnTxt, index)"],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
 			"SetOnMenuTouch": {
 				"abbrev": "",
-				"desc": "SetOnMenuTouch",
+				"desc": "Calls a function when the heading icon is click",
 				"name": "SetOnMenuTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function."],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
-			},
+            },
 			"SetTitleText": {
 				"abbrev": "",
-				"desc": "SetTitleText",
+				"desc": "Sets a new title",
 				"name": "SetTitleText",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newTitle"],
+				"pTypes": ["str-New title text"],
 				"shortDesc": "SetTitleText",
 				"subf": {}
 			},
 			"SetTitleTextColor": {
 				"abbrev": "",
-				"desc": "SetTitleTextColor",
+				"desc": "Change the color of the title",
 				"name": "SetTitleTextColor",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newColor"],
+				"pTypes": ["str_col"],
 				"shortDesc": "SetTitleTextColor",
 				"subf": {}
-			}
+            },
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetVisibility":"#1672373665",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "Hide":"#5372805812",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetPosition":"#1425862386",
+            "SetVisibility":"#1004824195",
+            "Show":"#1243391562",
+            "Tween":"#2114624769"
 		}
-	},
+    },
 	"CreateAppBarElegant": {
 		"abbrev": "abe",
-		"desc": "CreateAppBarElegant",
+		"desc": "A more elegant appbar implementation",
 		"name": "CreateAppBarElegant",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["title", "leadingIcon", "options"],
+		"pTypes": ["str-Title text", "str-Material icon font", "str-A comma separated material icon font for the right controls"],
 		"retval": "obj",
 		"shortDesc": "CreateAppBarElegant",
 		"subf": {
-			"AppBar": {
-				"desc": "AppBar",
-				"isval": true,
-				"name": "AppBar",
-				"retval": "?",
-				"shortDesc": "AppBar"
-			},
 			"SetMenuIcon": {
 				"abbrev": "",
-				"desc": "SetMenuIcon",
+				"desc": "Sets a new heading icon",
 				"name": "SetMenuIcon",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newIcon"],
+				"pTypes": ["str-New material icon font"],
 				"shortDesc": "SetMenuIcon",
 				"subf": {}
 			},
 			"SetMenuIconColor": {
 				"abbrev": "",
-				"desc": "SetMenuIconColor",
+				"desc": "Change the color of the heading icon",
 				"name": "SetMenuIconColor",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newColor"],
+				"pTypes": ["str_col-New color of the heading icon"],
 				"shortDesc": "SetMenuIconColor",
 				"subf": {}
 			},
 			"SetOnControlTouch": {
 				"abbrev": "",
-				"desc": "SetOnControlTouch",
+				"desc": "Calls a function when the right controls are click",
 				"name": "SetOnControlTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Pasess (btnTxt, index)"],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
 			"SetOnMenuTouch": {
 				"abbrev": "",
-				"desc": "SetOnMenuTouch",
+				"desc": "Calls a function when the heading icon is click",
 				"name": "SetOnMenuTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function."],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
-			},
+            },
 			"SetTitleText": {
 				"abbrev": "",
-				"desc": "SetTitleText",
+				"desc": "Sets a new title",
 				"name": "SetTitleText",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newTitle"],
+				"pTypes": ["str-New title text"],
 				"shortDesc": "SetTitleText",
 				"subf": {}
 			},
 			"SetTitleTextColor": {
 				"abbrev": "",
-				"desc": "SetTitleTextColor",
+				"desc": "Change the color of the title",
 				"name": "SetTitleTextColor",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["newColor"],
+				"pTypes": ["str_col"],
 				"shortDesc": "SetTitleTextColor",
 				"subf": {}
-			}
+            },
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetVisibility":"#1672373665",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "Hide":"#5372805812",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetPosition":"#1425862386",
+            "SetVisibility":"#1004824195",
+            "Show":"#1243391562",
+            "Tween":"#2114624769"
 		}
 	},
 	"CreateAppBarModern": {
 		"abbrev": "abm",
-		"desc": "CreateAppBarModern",
+		"desc": "A modern appbar with a search input, leading icon and trailing icon",
 		"name": "CreateAppBarModern",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["hint", "controlIcon", "options", "color"],
+		"pTypes": ["str-Hint text for the search input", "str-Material font for the control icon", "str-Can be Round|Rectangle", "str_col"],
 		"retval": "obj",
 		"shortDesc": "CreateAppBarModern",
 		"subf": {
-			"AppBar": {
-				"desc": "AppBar",
-				"isval": true,
-				"name": "AppBar",
-				"retval": "?",
-				"shortDesc": "AppBar"
-			},
-			"Search": {
-				"desc": "Search",
-				"isval": true,
-				"name": "Search",
-				"retval": "?",
-				"shortDesc": "Search"
-			},
+            "GetHeight":"#2576212953",
 			"SetOnControlTouch": {
 				"abbrev": "",
-				"desc": "SetOnControlTouch",
+				"desc": "Calls a function when right control is touch",
 				"name": "SetOnControlTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
 				"shortDesc": "SetOnControlTouch",
 				"subf": {}
 			},
 			"SetOnMenuTouch": {
 				"abbrev": "",
-				"desc": "SetOnMenuTouch",
+				"desc": "Call a function when the menu icon is touch",
 				"name": "SetOnMenuTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
 				"shortDesc": "SetOnMenuTouch",
 				"subf": {}
-			}
+            },
+            "ClearFocus":"#1362225380",
+            "ClearHistory": {
+                "abbrev": "",
+				"desc": "ClearHistory",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ClearHistory",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "abbrev": "",
+				"desc": "GetCursorLine",
+				"name": "GetCursorLine",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetCursorLine",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "abbrev": "",
+				"desc": "GetCursorPos",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetCursorPos",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "abbrev": "",
+				"desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "abbrev": "",
+				"desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "abbrev": "",
+				"desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "InsertText": {
+                "abbrev": "",
+				"desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "InsertText",
+				"subf": {}
+            },
+            "Redo": {
+                "abbrev": "",
+				"desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo",
+				"subf": {}
+            },
+            "ReplaceText": {
+                "abbrev": "",
+				"desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "ReplaceText",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "abbrev": "",
+				"desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "SetCursorPos",
+				"subf": {}
+            },
+            "SetOnChange":"#2137502353",
+            "SetOnEnter": {
+                "abbrev": "",
+				"desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard (line can still be inserted via Shift+Enter)",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "SetOnEnter",
+				"subf": {}
+            },
+            "SetOnFocus": {
+                "abbrev": "",
+				"desc": "Define a callback function called when the user focuses the control.",
+				"name": "SetOnFocus",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "SetOnFocus",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo": {
+                "abbrev": "",
+				"desc": "Undo an action.",
+				"name": "Undo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Undo",
+				"subf": {}
+            }
 		}
-	},
+    },
+    
+
+
 	"CreateBanner": {
 		"abbrev": "bnr",
 		"desc": "CreateBanner",
@@ -842,32 +997,72 @@
 	},
 	"CreateCard": {
 		"abbrev": "crd",
-		"desc": "CreateCard",
-		"name": "CreateCard",
-		"pNames": ["t"],
-		"pTypes": ["?"],
-		"retval": "obj",
+        "desc": "A material implementation of a card. It is fully customizable to suit your likings.<h5>options properties<i style='font-size: 75%;'>definitions</i></h5><p> <b>title</b><i style='font-size: 75%;'>String</i> Title text</p><p> <b>body</b><i style='font-size: 75%;'>String</i> Body text</p><p> <b>image</b><i style='font-size: 75%;'>String</i> Path to the image</p><p> <b>buttonText</b><i style='font-size: 75%;'>String</i> Comma separated string for button text</p><p> <b>color</b><i style='font-size: 75%;'>String</i> Color string</p><p> <b>width</b><i style='font-size: 75%;'>Number</i> Fraction of the screen width</p><p> <b>divider1</b><i style='font-size: 75%;'>Boolean</i> Divider below the avatar</p><p> <b>divider2</b><i style='font-size: 75%;'>Boolean</i> Divider below the body</p><p> <b>avatar</b><i style='font-size: 75%;'>String</i> Path to the avatar image</p><p> <b>avatarOnTop</b><i style='font-size: 75%;'>Boolean</i> Is the avatar on top of the image </p><p> <b>buttonType</b><i style='font-size: 75%;'>String</i> Can be 'raised', 'raisedoutline', 'round', 'roundoutline' or 'flat'</p><p> <b>name</b><i style='font-size: 75%;'>String</i> Name of the card</p>",
+        "name": "CreateCard",
+		"pNames": ["options"],
+		"pTypes": ["obj-An MUI card options object."],
+		"retval": "dso",
 		"shortDesc": "CreateCard",
 		"subf": {
-			"Card": {
-				"desc": "Card",
-				"isval": true,
-				"name": "Card",
-				"retval": "?",
-				"shortDesc": "Card"
-			},
-			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
-			"SetOnTouchImage": {
-				"abbrev": "",
-				"desc": "SetOnTouchImage",
-				"name": "SetOnTouchImage",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnTouchImage",
+            "SetOnButtonTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when buttons are click.",
+				"name": "SetOnButtonTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (buttontext, card-name)"],
+                "shortDesc": "SetOnButtonTouch",
 				"subf": {}
-			},
-			"SetPosition": "#1425862386"
+            },
+            "SetOnImageTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when the image is click.",
+				"name": "SetOnImageTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (card-name)"],
+                "shortDesc": "SetOnImageTouch",
+				"subf": {}
+            },
+            "SetOnAvatarTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when avatar is click.",
+				"name": "SetOnAvatarTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (card-name)"],
+                "shortDesc": "SetOnAvatarTouch",
+				"subf": {}
+            },
+            "SetOnTitleTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when title item is click.",
+				"name": "SetOnTitleTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (title, card-name)"],
+                "shortDesc": "SetOnTitleTouch",
+				"subf": {}
+            },
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetType": "#2114624701",
+            "GetVisibility":"#1672373665",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "Hide":"#5372805812",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetMargins":"#1741900074",
+            "SetPosition":"#1425862386",
+            "SetVisibility":"#1004824195",
+            "Show":"#1243391562",
+            "Tween":"#2114624769"
 		}
 	},
 	"CreateCheckbox": {
@@ -938,27 +1133,6 @@
 				"shortDesc": "SetOnSubmit",
 				"subf": {}
 			}
-		}
-	},
-	"CreateCustomFAB": {
-		"abbrev": "cfa",
-		"desc": "CreateCustomFAB",
-		"name": "CreateCustomFAB",
-		"pNames": ["t", "e"],
-		"pTypes": ["?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateCustomFAB",
-		"subf": {
-			"FAB": {
-				"desc": "FAB",
-				"isval": true,
-				"name": "FAB",
-				"retval": "?",
-				"shortDesc": "FAB"
-			},
-			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
-			"SetPosition": "#1425862386"
 		}
 	},
 	"CreateDatePicker": {
@@ -1660,58 +1834,13 @@
 			"Tween": "#2114624769"
 		}
 	},
-	"CreateID": {
-		"abbrev": "id",
-		"desc": "CreateID",
-		"name": "CreateID",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "obj",
-		"shortDesc": "CreateID",
-		"subf": {}
-	},
-	"CreateLightColor": {
-		"abbrev": "lgc",
-		"desc": "CreateLightColor",
-		"name": "CreateLightColor",
-		"pNames": ["t"],
-		"pTypes": ["?"],
-		"retval": "obj",
-		"shortDesc": "CreateLightColor",
-		"subf": {
-			"0": {
-				"desc": "0",
-				"isval": true,
-				"name": "0",
-				"retval": "str-'",
-				"shortDesc": "0"
-			},
-			"1": {
-				"desc": "1",
-				"isval": true,
-				"name": "1",
-				"retval": "str-'",
-				"shortDesc": "1"
-			},
-			"toFontName": {
-				"abbrev": "",
-				"desc": "toFontName",
-				"name": "toFontName",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "toFontName",
-				"subf": {}
-			}
-		}
-	},
 	"CreateList": {
 		"abbrev": "lst",
-		"desc": "CreateList",
+		"desc": "A manipulation of the DroidScript list object.",
 		"name": "CreateList",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
+		"pNames": ["list", "width", "height", "options"],
+		"pTypes": ["str", "num", "num", "str"],
+		"retval": "dso",
 		"shortDesc": "CreateList",
 		"subf": {
 			"AddItem": {
@@ -1726,13 +1855,6 @@
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
 			"ClearFocus": "#1362225380",
-			"data": {
-				"desc": "data",
-				"isval": true,
-				"name": "data",
-				"retval": "obj",
-				"shortDesc": "data"
-			},
 			"Focus": "#7324472769",
 			"GetAbsHeight": "#1197564340",
 			"GetAbsWidth": "#1128215329",
@@ -2057,7 +2179,7 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateListDialog": {
 		"abbrev": "lsd",
 		"desc": "CreateListDialog",
@@ -2078,902 +2200,359 @@
 				"subf": {}
 			}
 		}
-	},
-	"CreateListInitialIcon": {
-		"abbrev": "lii",
-		"desc": "CreateListInitialIcon",
-		"name": "CreateListInitialIcon",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateListInitialIcon",
-		"subf": {
-			"AppendItems": {
-				"abbrev": "",
-				"desc": "AppendItems",
-				"name": "AppendItems",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "AppendItems",
-				"subf": {}
-			},
-			"color": {
-				"desc": "color",
-				"isval": true,
-				"name": "color",
-				"retval": "str-#4285F4",
-				"shortDesc": "color"
-			},
-			"created": {
-				"desc": "created",
-				"isval": true,
-				"name": "created",
-				"retval": "bin",
-				"shortDesc": "created"
-			},
-			"CreateIcon": {
-				"abbrev": "icn",
-				"desc": "CreateIcon",
-				"name": "CreateIcon",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "CreateIcon",
-				"subf": {}
-			},
-			"CreateItem": {
-				"abbrev": "itm",
-				"desc": "CreateItem",
-				"name": "CreateItem",
-				"pNames": ["t", "e", "i"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateItem",
-				"subf": {}
-			},
-			"GetList": {
-				"abbrev": "",
-				"desc": "GetList",
-				"name": "GetList",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetList",
-				"subf": {}
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"list": {
-				"desc": "list",
-				"isval": true,
-				"name": "list",
-				"retval": "lst",
-				"shortDesc": "list"
-			},
-			"List": {
-				"desc": "List",
-				"isval": true,
-				"name": "List",
-				"retval": "?",
-				"shortDesc": "List"
-			},
-			"listID": {
-				"desc": "listID",
-				"isval": true,
-				"name": "listID",
-				"retval": "num",
-				"shortDesc": "listID"
-			},
-			"PopItem": {
-				"abbrev": "",
-				"desc": "PopItem",
-				"name": "PopItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "PopItem",
-				"subf": {}
-			},
-			"RemoveItem": {
-				"abbrev": "",
-				"desc": "RemoveItem",
-				"name": "RemoveItem",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "RemoveItem",
-				"subf": {}
-			},
-			"SetBodyText": {
-				"abbrev": "",
-				"desc": "SetBodyText",
-				"name": "SetBodyText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetBodyText",
-				"subf": {}
-			},
-			"SetControlOnTouch": {
-				"abbrev": "",
-				"desc": "SetControlOnTouch",
-				"name": "SetControlOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetControlOnTouch",
-				"subf": {}
-			},
-			"SetIconOnTouch": {
-				"abbrev": "",
-				"desc": "SetIconOnTouch",
-				"name": "SetIconOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetIconOnTouch",
-				"subf": {}
-			},
-			"SetItem": {
-				"abbrev": "",
-				"desc": "SetItem",
-				"name": "SetItem",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetItem",
-				"subf": {}
-			},
-			"SetOnTouch": "#2398750419",
-			"SetRightIcon": {
-				"abbrev": "",
-				"desc": "SetRightIcon",
-				"name": "SetRightIcon",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetRightIcon",
-				"subf": {}
-			},
-			"SetTitleText": {
-				"abbrev": "",
-				"desc": "SetTitleText",
-				"name": "SetTitleText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTitleText",
-				"subf": {}
-			},
-			"SetUnread": {
-				"abbrev": "",
-				"desc": "SetUnread",
-				"name": "SetUnread",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetUnread",
-				"subf": {}
-			},
-			"ShiftItem": {
-				"abbrev": "",
-				"desc": "ShiftItem",
-				"name": "ShiftItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "ShiftItem",
-				"subf": {}
-			},
-			"type": {
-				"desc": "type",
-				"isval": true,
-				"name": "type",
-				"retval": "str-elegant",
-				"shortDesc": "type"
-			}
-		}
-	},
-	"CreateListMaterialIcon": {
-		"abbrev": "lmi",
-		"desc": "CreateListMaterialIcon",
-		"name": "CreateListMaterialIcon",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateListMaterialIcon",
-		"subf": {
-			"AppendItems": {
-				"abbrev": "",
-				"desc": "AppendItems",
-				"name": "AppendItems",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "AppendItems",
-				"subf": {}
-			},
-			"color": {
-				"desc": "color",
-				"isval": true,
-				"name": "color",
-				"retval": "str-#4285F4",
-				"shortDesc": "color"
-			},
-			"created": {
-				"desc": "created",
-				"isval": true,
-				"name": "created",
-				"retval": "bin",
-				"shortDesc": "created"
-			},
-			"CreateIcon": {
-				"abbrev": "icn",
-				"desc": "CreateIcon",
-				"name": "CreateIcon",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "CreateIcon",
-				"subf": {}
-			},
-			"CreateItem": {
-				"abbrev": "itm",
-				"desc": "CreateItem",
-				"name": "CreateItem",
-				"pNames": ["t", "e", "i"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateItem",
-				"subf": {}
-			},
-			"GetList": {
-				"abbrev": "",
-				"desc": "GetList",
-				"name": "GetList",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetList",
-				"subf": {}
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"list": {
-				"desc": "list",
-				"isval": true,
-				"name": "list",
-				"retval": "lst",
-				"shortDesc": "list"
-			},
-			"List": {
-				"desc": "List",
-				"isval": true,
-				"name": "List",
-				"retval": "?",
-				"shortDesc": "List"
-			},
-			"listID": {
-				"desc": "listID",
-				"isval": true,
-				"name": "listID",
-				"retval": "num",
-				"shortDesc": "listID"
-			},
-			"PopItem": {
-				"abbrev": "",
-				"desc": "PopItem",
-				"name": "PopItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "PopItem",
-				"subf": {}
-			},
-			"RemoveItem": {
-				"abbrev": "",
-				"desc": "RemoveItem",
-				"name": "RemoveItem",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "RemoveItem",
-				"subf": {}
-			},
-			"SetBodyText": {
-				"abbrev": "",
-				"desc": "SetBodyText",
-				"name": "SetBodyText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetBodyText",
-				"subf": {}
-			},
-			"SetControlOnTouch": {
-				"abbrev": "",
-				"desc": "SetControlOnTouch",
-				"name": "SetControlOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetControlOnTouch",
-				"subf": {}
-			},
-			"SetIcon": {
-				"abbrev": "",
-				"desc": "SetIcon",
-				"name": "SetIcon",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetIcon",
-				"subf": {}
-			},
-			"SetIconOnTouch": {
-				"abbrev": "",
-				"desc": "SetIconOnTouch",
-				"name": "SetIconOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetIconOnTouch",
-				"subf": {}
-			},
-			"SetItem": {
-				"abbrev": "",
-				"desc": "SetItem",
-				"name": "SetItem",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetItem",
-				"subf": {}
-			},
-			"SetOnTouch": "#2398750419",
-			"SetRightIcon": {
-				"abbrev": "",
-				"desc": "SetRightIcon",
-				"name": "SetRightIcon",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetRightIcon",
-				"subf": {}
-			},
-			"SetTitleText": {
-				"abbrev": "",
-				"desc": "SetTitleText",
-				"name": "SetTitleText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTitleText",
-				"subf": {}
-			},
-			"SetUnread": {
-				"abbrev": "",
-				"desc": "SetUnread",
-				"name": "SetUnread",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetUnread",
-				"subf": {}
-			},
-			"ShiftItem": {
-				"abbrev": "",
-				"desc": "ShiftItem",
-				"name": "ShiftItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "ShiftItem",
-				"subf": {}
-			},
-			"type": {
-				"desc": "type",
-				"isval": true,
-				"name": "type",
-				"retval": "str-elegant",
-				"shortDesc": "type"
-			}
-		}
-	},
+    },
 	"CreateListModern": {
 		"abbrev": "lsm",
-		"desc": "CreateListModern",
-		"name": "CreateListModern",
-		"pNames": ["t", "e", "i"],
-		"pTypes": ["?", "?", "?"],
-		"retval": "obj",
+        "desc": "A modern implementation of list using the available controls of DroidScript<br><br><i> Please note that <b>CreateListInitialIcon, CreateListMaterialIcon and CreateListWithAvatar</b> are now deprecated. But still you can achieve these designs by passing appropriate comma-separated options to the <b>options</b> param of <b>CreateListModern</b></i>",
+        "name": "CreateListModern",
+		"pNames": ["list", "width", "height", "options"],
+		"pTypes": ["lst-An array of object elements. See list example", "num", "num", "str-Can be Initial|Material|Avatar, RightIcon|RightNote, Selectable"],
+		"retval": "dso",
 		"shortDesc": "CreateListModern",
 		"subf": {
-			"AppendItems": {
+            "SetOnTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when an item is click.",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes title,body,index"],
+                "shortDesc": "SetOnTouch",
+				"subf": {}
+            },
+            "SetAvatarOnTouch": {
 				"abbrev": "",
-				"desc": "AppendItems",
-				"name": "AppendItems",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "AppendItems",
+				"desc": "Calls a function when an icon or avatar is click",
+				"name": "SetAvatarOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes index"],
+                "shortDesc": "SetAvatarOnTouch",
 				"subf": {}
-			},
-			"color": {
-				"desc": "color",
-				"isval": true,
-				"name": "color",
-				"retval": "str-#4285F4",
-				"shortDesc": "color"
-			},
-			"created": {
-				"desc": "created",
-				"isval": true,
-				"name": "created",
-				"retval": "bin",
-				"shortDesc": "created"
-			},
-			"CreateImage": {
-				"abbrev": "img",
-				"desc": "CreateImage",
-				"name": "CreateImage",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateImage",
+            },
+            "SetControlOnTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when a right icon is click",
+				"name": "SetControlOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes index"],
+                "shortDesc": "SetControlOnTouch",
 				"subf": {}
-			},
-			"CreateItem": {
-				"abbrev": "itm",
-				"desc": "CreateItem",
-				"name": "CreateItem",
-				"pNames": ["t", "e", "i"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateItem",
-				"subf": {}
-			},
-			"GetList": {
+            },
+            "AppendItem": {
 				"abbrev": "",
-				"desc": "GetList",
+				"desc": "Appends an item at the bottom of the list",
+				"name": "AppendItem",
+				"pNames": ["data"],
+				"pTypes": ["obj-A single element of the list"],
+				"shortDesc": "AppendItem",
+				"subf": {}
+            },
+            "RemoveItem": {
+				"abbrev": "",
+				"desc": "Removes an item in the list.",
+				"name": "RemoveItem",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "RemoveItem",
+				"subf": {}
+            },
+            "SetTitleText": {
+				"abbrev": "",
+				"desc": "Set a new title to a respective index",
+				"name": "SetTitleText",
+				"pNames": ["newTitle", "index"],
+				"pTypes": ["str-New title text", "num_int"],
+				"shortDesc": "SetTitleText",
+				"subf": {}
+            },
+            "SetBodyText": {
+				"abbrev": "",
+				"desc": "Set a new body to a respective index",
+				"name": "SetBodyText",
+				"pNames": ["newBody", "index"],
+				"pTypes": ["str-New body text", "num_int"],
+				"shortDesc": "SetBodyText",
+				"subf": {}
+            },
+            "SetRightIcon": {
+                "abbrev": "",
+				"desc": "Set a new material icon to the right icon",
+				"name": "SetRightIcon",
+				"pNames": ["newIcon", "index"],
+				"pTypes": ["str-New right icon", "num_int"],
+				"shortDesc": "SetRightIcon",
+				"subf": {}
+            },
+            "SetNoteText": {
+				"abbrev": "",
+				"desc": "Set a new note text for a respective item on the list",
+				"name": "SetNoteText",
+				"pNames": ["newNote", "index"],
+				"pTypes": ["str-New note text", "num_int"],
+				"shortDesc": "SetNoteText",
+				"subf": {}
+            },
+            "PopItem": {
+				"abbrev": "",
+				"desc": "Removes an item at the bottom of the list",
+				"name": "PopItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "PopItem",
+				"subf": {}
+            },
+            "ShiftItem": {
+				"abbrev": "",
+				"desc": "Removes an item at the beginning of the list",
+				"name": "ShiftItem",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "ShiftItem",
+				"subf": {}
+            },
+            "GetList": {
+				"abbrev": "",
+				"desc": "Returns the current list object",
 				"name": "GetList",
 				"pNames": [],
 				"pTypes": [],
 				"retval": "obj",
 				"shortDesc": "GetList",
 				"subf": {}
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"list": {
-				"desc": "list",
-				"isval": true,
-				"name": "list",
-				"retval": "lst",
-				"shortDesc": "list"
-			},
-			"List": {
-				"desc": "List",
-				"isval": true,
-				"name": "List",
-				"retval": "?",
-				"shortDesc": "List"
-			},
-			"listID": {
-				"desc": "listID",
-				"isval": true,
-				"name": "listID",
-				"retval": "num",
-				"shortDesc": "listID"
-			},
-			"PopItem": {
-				"abbrev": "",
-				"desc": "PopItem",
-				"name": "PopItem",
+            },
+            "GetItem":{
+                "abbrev": "",
+				"desc": "Returns the respective item in the list",
+				"name": "GetItem",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"retval": "obj",
+				"shortDesc": "GetItem",
+				"subf": {}
+            },
+            "GetCheckedItems":{
+                "abbrev": "",
+				"desc": "Returns the selected items in the list",
+				"name": "GetCheckedItems",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "PopItem",
+				"retval": "lst-List of indexes for slected items",
+				"shortDesc": "GetCheckedItems",
 				"subf": {}
-			},
-			"RemoveItem": {
-				"abbrev": "",
-				"desc": "RemoveItem",
-				"name": "RemoveItem",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "RemoveItem",
+            },
+            "Highlight": {
+                "abbrev": "",
+				"desc": "Highlight a respective item in the list",
+				"name": "Highlight",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Highlight",
 				"subf": {}
-			},
-			"SetBodyText": {
-				"abbrev": "",
-				"desc": "SetBodyText",
-				"name": "SetBodyText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetBodyText",
+            },
+            "RemoveHighlight": {
+                "abbrev": "",
+				"desc": "Removes a highlight to a respective item in the list",
+				"name": "RemoveHighlight",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "RemoveHighlight",
 				"subf": {}
-			},
-			"SetIconOnTouch": {
+            },
+            "SetImage": {
 				"abbrev": "",
-				"desc": "SetIconOnTouch",
-				"name": "SetIconOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetIconOnTouch",
-				"subf": {}
-			},
-			"SetImage": {
-				"abbrev": "",
-				"desc": "SetImage",
+				"desc": "Set a new image to a respective item in the list",
 				"name": "SetImage",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
+				"pNames": ["newImagePath", "index"],
+				"pTypes": ["str_pth-Path to the new image", "num_int"],
 				"shortDesc": "SetImage",
 				"subf": {}
-			},
-			"SetItem": {
+            },
+            "SetItem": {
 				"abbrev": "",
 				"desc": "SetItem",
 				"name": "SetItem",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
+				"pNames": ["data", "index"],
+				"pTypes": ["obj-A single element of the list object", "num_int"],
 				"shortDesc": "SetItem",
 				"subf": {}
-			},
-			"SetNoteText": {
-				"abbrev": "",
-				"desc": "SetNoteText",
-				"name": "SetNoteText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetNoteText",
-				"subf": {}
-			},
-			"SetOnTouch": "#2398750419",
-			"SetTitleText": {
-				"abbrev": "",
-				"desc": "SetTitleText",
-				"name": "SetTitleText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetTitleText",
-				"subf": {}
-			},
-			"SetUnread": {
-				"abbrev": "",
-				"desc": "SetUnread",
-				"name": "SetUnread",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "SetUnread",
-				"subf": {}
-			},
-			"ShiftItem": {
-				"abbrev": "",
-				"desc": "ShiftItem",
-				"name": "ShiftItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "ShiftItem",
-				"subf": {}
-			}
+            },
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetVisibility":"#1672373665",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "Hide":"#5372805812",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetMargins":"#1741900074",
+            "SetPosition":"#1425862386",
+            "SetVisibility":"#1004824195",
+            "Show":"#1243391562",
+            "Tween":"#2114624769"
 		}
 	},
 	"CreateListSimple": {
 		"abbrev": "lss",
 		"desc": "CreateListSimple",
 		"name": "CreateListSimple",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
+		"pNames": ["list", "width", "height", "options"],
+		"pTypes": ["lst-An MUI simple list option", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Divider"],
+		"retval": "dso",
 		"shortDesc": "CreateListSimple",
 		"subf": {
-			"AppendItems": {
-				"abbrev": "",
-				"desc": "AppendItems",
-				"name": "AppendItems",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "AppendItems",
+            "SetOnTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when an item is click.",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes index,title,icon,badge"],
+                "shortDesc": "SetOnTouch",
 				"subf": {}
-			},
-			"backColor": {
-				"desc": "backColor",
-				"isval": true,
-				"name": "backColor",
-				"retval": "str-#ffffff",
-				"shortDesc": "backColor"
-			},
-			"created": {
-				"desc": "created",
-				"isval": true,
-				"name": "created",
-				"retval": "bin",
-				"shortDesc": "created"
-			},
-			"CreateIcon": {
-				"abbrev": "icn",
-				"desc": "CreateIcon",
-				"name": "CreateIcon",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateIcon",
+            },
+            "AppendItem":{
+                "abbrev": "",
+				"desc": "Appends an item at the bottom of the list",
+				"name": "AppendItem",
+				"pNames": ["data"],
+				"pTypes": ["obj-A single element of the list"],
+				"shortDesc": "AppendItem",
 				"subf": {}
-			},
-			"CreateItem": {
-				"abbrev": "itm",
-				"desc": "CreateItem",
-				"name": "CreateItem",
-				"pNames": ["t", "i", "a"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateItem",
-				"subf": {}
-			},
-			"GetList": {
-				"abbrev": "",
-				"desc": "GetList",
-				"name": "GetList",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetList",
-				"subf": {}
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"list": {
-				"desc": "list",
-				"isval": true,
-				"name": "list",
-				"retval": "lst",
-				"shortDesc": "list"
-			},
-			"List": {
-				"desc": "List",
-				"isval": true,
-				"name": "List",
-				"retval": "?",
-				"shortDesc": "List"
-			},
-			"listID": {
-				"desc": "listID",
-				"isval": true,
-				"name": "listID",
-				"retval": "num",
-				"shortDesc": "listID"
-			},
-			"SetOnTouch": "#2398750419"
-		}
-	},
-	"CreateListWithAvatar": {
-		"abbrev": "lwa",
-		"desc": "CreateListWithAvatar",
-		"name": "CreateListWithAvatar",
-		"pNames": ["t", "e", "i"],
-		"pTypes": ["?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateListWithAvatar",
-		"subf": {
-			"AppendItems": {
-				"abbrev": "",
-				"desc": "AppendItems",
-				"name": "AppendItems",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"shortDesc": "AppendItems",
-				"subf": {}
-			},
-			"created": {
-				"desc": "created",
-				"isval": true,
-				"name": "created",
-				"retval": "bin",
-				"shortDesc": "created"
-			},
-			"CreateImage": {
-				"abbrev": "img",
-				"desc": "CreateImage",
-				"name": "CreateImage",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateImage",
-				"subf": {}
-			},
-			"CreateItem": {
-				"abbrev": "itm",
-				"desc": "CreateItem",
-				"name": "CreateItem",
-				"pNames": ["t", "e", "i"],
-				"pTypes": ["?", "?", "?"],
-				"retval": "obj",
-				"shortDesc": "CreateItem",
-				"subf": {}
-			},
-			"GetList": {
-				"abbrev": "",
-				"desc": "GetList",
-				"name": "GetList",
-				"pNames": [],
-				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetList",
-				"subf": {}
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"list": {
-				"desc": "list",
-				"isval": true,
-				"name": "list",
-				"retval": "lst",
-				"shortDesc": "list"
-			},
-			"List": {
-				"desc": "List",
-				"isval": true,
-				"name": "List",
-				"retval": "?",
-				"shortDesc": "List"
-			},
-			"listID": {
-				"desc": "listID",
-				"isval": true,
-				"name": "listID",
-				"retval": "num",
-				"shortDesc": "listID"
-			},
-			"PopItem": {
-				"abbrev": "",
-				"desc": "PopItem",
-				"name": "PopItem",
-				"pNames": [],
-				"pTypes": [],
-				"shortDesc": "PopItem",
-				"subf": {}
-			},
-			"RemoveItem": {
-				"abbrev": "",
-				"desc": "RemoveItem",
+            },
+            "RemoveItem":{
+                "abbrev": "",
+				"desc": "Removes an item in the list.",
 				"name": "RemoveItem",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
 				"shortDesc": "RemoveItem",
 				"subf": {}
-			},
-			"SetBodyText": {
-				"abbrev": "",
-				"desc": "SetBodyText",
-				"name": "SetBodyText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "SetBodyText",
+            },
+            "SetBadge": {
+                "abbrev": "",
+				"desc": "Set the badge of the corresponding item",
+				"name": "SetBadge",
+				"pNames": ["newBadge", "index"],
+				"pTypes": ["num_int", "num_int"],
+				"shortDesc": "Sets a new badge",
 				"subf": {}
-			},
-			"SetControlOnTouch": {
-				"abbrev": "",
-				"desc": "SetControlOnTouch",
-				"name": "SetControlOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetControlOnTouch",
-				"subf": {}
-			},
-			"SetIconOnTouch": {
-				"abbrev": "",
-				"desc": "SetIconOnTouch",
-				"name": "SetIconOnTouch",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetIconOnTouch",
-				"subf": {}
-			},
-			"SetImage": {
-				"abbrev": "",
-				"desc": "SetImage",
-				"name": "SetImage",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "SetImage",
-				"subf": {}
-			},
-			"SetItem": {
-				"abbrev": "",
-				"desc": "SetItem",
-				"name": "SetItem",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "SetItem",
-				"subf": {}
-			},
-			"SetOnTouch": "#2398750419",
-			"SetRightIcon": {
-				"abbrev": "",
-				"desc": "SetRightIcon",
-				"name": "SetRightIcon",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "SetRightIcon",
-				"subf": {}
-			},
-			"SetTitleText": {
-				"abbrev": "",
-				"desc": "SetTitleText",
+            },
+            "SetTitleText":{
+                "abbrev": "",
+				"desc": "Sets a new title to a corresponding item",
 				"name": "SetTitleText",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
+				"pNames": ["newTitle", "index"],
+				"pTypes": ["str-New title text", "num_int"],
 				"shortDesc": "SetTitleText",
 				"subf": {}
-			},
-			"SetUnread": {
-				"abbrev": "",
-				"desc": "SetUnread",
-				"name": "SetUnread",
-				"pNames": ["t", "e"],
-				"pTypes": ["?", "?"],
-				"retval": "obj",
-				"shortDesc": "SetUnread",
-				"subf": {}
-			},
-			"ShiftItem": {
-				"abbrev": "",
-				"desc": "ShiftItem",
-				"name": "ShiftItem",
+            },
+            "GetList":{
+                "abbrev": "",
+				"desc": "Returns the current list object",
+				"name": "GetList",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "ShiftItem",
+				"retval": "obj",
+				"shortDesc": "GetList",
 				"subf": {}
-			}
+            },
+            "ClearFocus":"#1362225380",
+            "Focus":"#7324472769",
+            "GetAbsHeight":"#1197564340",
+            "GetAbsWidth":"#1128215329",
+            "GetHeight":"#2576212953",
+            "GetLeft":"#1237814406",
+            "GetParent":"#3557841648",
+            "GetPosition":"#1605064214",
+            "GetTop":"#1981028136",
+            "GetVisibility":"#1672373665",
+            "GetWidth":"#1321469131",
+            "Gone":"#5528553362",
+            "Hide":"#5372805812",
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882",
+            "SetMargins":"#1741900074",
+            "SetPosition":"#1425862386",
+            "SetVisibility":"#1004824195",
+            "Show":"#1243391562",
+            "Tween":"#2114624769"
 		}
 	},
 	"CreateMenu": {
 		"abbrev": "mn",
-		"desc": "CreateMenu",
+		"desc": "A simple MUI implementation of material design menu.",
 		"name": "CreateMenu",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["list", "width", "height", "position"],
+		"pTypes": ["str-A comma separated list", "num-Fraction of the screen width", "num-Fraction of the screen height", "str-Can be <span style='color:green;'>Top,Left|Top,Right|Bottom,Left|Bottom,Right</span>"],
 		"retval": "obj",
-		"shortDesc": "CreateMenu",
-		"subf": { "SetOnSelect": {
-	"abbrev": "",
-	"desc": "SetOnSelect",
-	"name": "SetOnSelect",
-	"pNames": ["t"],
-	"pTypes": ["?"],
-	"shortDesc": "SetOnSelect",
-	"subf": {}
-} }
+		"shortDesc": "Creates a simple menu",
+		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+                "desc": "Calls a function when item is click",
+                "name": "SetOnSelect",
+                "pNames": ["callback"],
+                "pTypes": ["fnc-Callback function. Passes (text, index)"],
+                "shortDesc": "SetOnSelect",
+                "subf": {}
+            },
+            "Show":"#1243391562",
+            "Hide":"#5372805812",
+            "Destroy": {
+                "abbrev": "",
+                "desc": "Destroy the menu object completely.",
+                "name": "Destroy",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Destroy the menu object.",
+                "subf": {}
+            }
+        }
 	},
 	"CreateMenuWithIcon": {
 		"abbrev": "mwi",
-		"desc": "CreateMenuWithIcon",
+		"desc": "Advance MUI implementation of material design menu with additional icon using material icon font",
 		"name": "CreateMenuWithIcon",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["list", "width", "height", "position"],
+		"pTypes": [
+            "lst-A string list with the ff format 'Title:material_icon'",
+            "num-Fraction of the screen width",
+            "num-Fraction of the screen height",
+            "str-Can be <span style='color:green;'>Top,Left|Top,Right|Bottom,Left|Bottom,Right</span>"
+        ],
 		"retval": "obj",
-		"shortDesc": "CreateMenuWithIcon",
-		"subf": { "SetOnSelect": {
-	"abbrev": "",
-	"desc": "SetOnSelect",
-	"name": "SetOnSelect",
-	"pNames": ["t"],
-	"pTypes": ["?"],
-	"shortDesc": "SetOnSelect",
-	"subf": {}
-} }
+		"shortDesc": "Advance MUI menu",
+		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+                "desc": "Calls a function when item is click",
+                "name": "SetOnSelect",
+                "pNames": ["callback"],
+                "pTypes": ["fnc-Callback function. Passes (text, index)"],
+                "shortDesc": "SetOnSelect",
+                "subf": {}
+            },
+            "Show":"#1243391562",
+            "Hide":"#5372805812",
+            "Destroy": {
+                "abbrev": "",
+                "desc": "Destroy the menu object completely.",
+                "name": "Destroy",
+                "pNames": [],
+                "pTypes": [],
+                "shortDesc": "Destroy the menu object.",
+                "subf": {}
+            }
+        }
 	},
 	"CreateModal": {
 		"abbrev": "mdl",
@@ -5624,123 +5203,11 @@
 	"subf": {}
 } }
 	},
-	"darkColors": {
-		"desc": "darkColors",
-		"isval": true,
-		"name": "darkColors",
-		"retval": "lst",
-		"shortDesc": "darkColors"
-	},
-	"dp": {
-		"desc": "dp",
-		"isval": true,
-		"name": "dp",
-		"retval": "num",
-		"shortDesc": "dp"
-	},
-	"DpToPx": {
-		"abbrev": "",
-		"desc": "DpToPx",
-		"name": "DpToPx",
-		"pNames": ["t"],
-		"pTypes": ["?"],
-		"retval": "obj",
-		"shortDesc": "DpToPx",
-		"subf": {}
-	},
 	"fonts": {
 		"desc": "fonts",
 		"isval": true,
 		"name": "fonts",
 		"retval": "obj",
 		"shortDesc": "fonts"
-	},
-	"Fr": {
-		"abbrev": "",
-		"desc": "Fr",
-		"name": "Fr",
-		"pNames": ["t"],
-		"pTypes": ["?"],
-		"retval": "obj",
-		"shortDesc": "Fr",
-		"subf": {}
-	},
-	"functions": {
-		"desc": "functions",
-		"isval": true,
-		"name": "functions",
-		"retval": "obj",
-		"shortDesc": "functions"
-	},
-	"Fw": {
-		"abbrev": "",
-		"desc": "Fw",
-		"name": "Fw",
-		"pNames": ["t"],
-		"pTypes": ["?"],
-		"retval": "obj",
-		"shortDesc": "Fw",
-		"subf": {}
-	},
-	"GetVersion": {
-		"abbrev": "",
-		"desc": "GetVersion",
-		"name": "GetVersion",
-		"pNames": [],
-		"pTypes": [],
-		"retval": "obj",
-		"shortDesc": "GetVersion",
-		"subf": {}
-	},
-	"RemoveLayout": {
-		"abbrev": "",
-		"desc": "RemoveLayout",
-		"name": "RemoveLayout",
-		"pNames": [],
-		"pTypes": [],
-		"shortDesc": "RemoveLayout",
-		"subf": {}
-	},
-	"sh": {
-		"desc": "sh",
-		"isval": true,
-		"name": "sh",
-		"retval": "num",
-		"shortDesc": "sh"
-	},
-	"shdp": {
-		"desc": "shdp",
-		"isval": true,
-		"name": "shdp",
-		"retval": "num",
-		"shortDesc": "shdp"
-	},
-	"sw": {
-		"desc": "sw",
-		"isval": true,
-		"name": "sw",
-		"retval": "num",
-		"shortDesc": "sw"
-	},
-	"swdp": {
-		"desc": "swdp",
-		"isval": true,
-		"name": "swdp",
-		"retval": "num",
-		"shortDesc": "swdp"
-	},
-	"values": {
-		"desc": "values",
-		"isval": true,
-		"name": "values",
-		"retval": "obj",
-		"shortDesc": "values"
-	},
-	"version": {
-		"desc": "version",
-		"isval": true,
-		"name": "version",
-		"retval": "num",
-		"shortDesc": "version"
 	}
 }
