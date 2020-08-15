@@ -2234,154 +2234,547 @@
             "SetEnabled":"#1602385882"
 		}
     },
-    
-
-
-    
 	"CreateRadio": {
 		"abbrev": "rd",
-		"desc": "CreateRadio",
+		"desc": "Creates a radio control by manipulation of the DroidScript's list control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
 		"name": "CreateRadio",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["list", "width", "height", "color"],
+		"pTypes": ["str-A comma separated strings", "num", "num", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateRadio",
+		"shortDesc": "Creates a radio control. A radio control allows the user to select only one item in a list.",
 		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+				"desc": "Calls a function when the user selects an item in the list",
+				"name": "CheckItemByIndex",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"shortDesc": "Calls a function when the user selects an item in the list",
+				"subf": {}
+            },
 			"CheckItemByIndex": {
 				"abbrev": "",
-				"desc": "CheckItemByIndex",
+				"desc": "Checks a corresponding item",
 				"name": "CheckItemByIndex",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "CheckItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Checks a corresponding item",
 				"subf": {}
 			},
 			"GetCheckItem": {
 				"abbrev": "",
-				"desc": "GetCheckItem",
+				"desc": "Gets the checked item in the list",
 				"name": "GetCheckItem",
 				"pNames": [],
 				"pTypes": [],
+				"retval": "str-title,index",
+				"shortDesc": "Gets the checked item in the list",
+				"subf": {}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+			"GetHeight": "#2576212953",
+			"GetItem": {
+				"abbrev": "",
+				"desc": "GetItem",
+				"name": "GetItem",
+				"pNames": ["title"],
+				"pTypes": ["str"],
 				"retval": "obj",
-				"shortDesc": "GetCheckItem",
+				"shortDesc": "GetItem",
 				"subf": {}
 			},
-			"Radio": {
-				"desc": "Radio",
-				"isval": true,
-				"name": "Radio",
-				"retval": "?",
-				"shortDesc": "Radio"
+			"GetItemByIndex": {
+				"abbrev": "",
+				"desc": "GetItemByIndex",
+				"name": "GetItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"retval": "obj",
+				"shortDesc": "GetItemByIndex",
+				"subf": {}
+			},
+			"GetLeft": "#1237814406",
+			"GetLength": {
+				"abbrev": "",
+				"desc": "GetLength",
+				"name": "GetLength",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "num_int",
+				"shortDesc": "GetLength",
+				"subf": {}
+			},
+			"GetList": {
+				"abbrev": "",
+				"desc": "GetList",
+				"name": "GetList",
+				"pNames": ["delim"],
+				"pTypes": ["str"],
+				"retval": "obj",
+				"shortDesc": "GetList",
+				"subf": {}
+			},
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTextSize": "#2530918945",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-List",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetVisibility": "#1672373665",
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"Hide": "#5372805812",
+			"InsertItem": {
+				"abbrev": "",
+				"desc": "InsertItem",
+				"name": "InsertItem",
+				"pNames": ["index", "title", "body", "image"],
+				"pTypes": ["num", "str", "str", "?"],
+				"shortDesc": "InsertItem",
+				"subf": {}
+			},
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"Method": "#1023663567",
+			"RemoveAll": {
+				"abbrev": "",
+				"desc": "RemoveAll",
+				"name": "RemoveAll",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "RemoveAll",
+				"subf": {}
+			},
+			"RemoveItem": {
+				"abbrev": "",
+				"desc": "RemoveItem",
+				"name": "RemoveItem",
+				"pNames": ["title"],
+				"pTypes": ["str"],
+				"shortDesc": "RemoveItem",
+				"subf": {}
+			},
+			"RemoveItemByIndex": {
+				"abbrev": "",
+				"desc": "RemoveItemByIndex",
+				"name": "RemoveItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"shortDesc": "RemoveItemByIndex",
+				"subf": {}
+			},
+			"ScrollToItem": {
+				"abbrev": "",
+				"desc": "ScrollToItem",
+				"name": "ScrollToItem",
+				"pNames": ["title", "body"],
+				"pTypes": ["str", "str"],
+				"shortDesc": "ScrollToItem",
+				"subf": {}
+			},
+			"ScrollToItemByIndex": {
+				"abbrev": "",
+				"desc": "ScrollToItemByIndex",
+				"name": "ScrollToItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"shortDesc": "ScrollToItemByIndex",
+				"subf": {}
+			},
+			"SelectItem": {
+				"abbrev": "",
+				"desc": "SelectItem",
+				"name": "SelectItem",
+				"pNames": ["title", "body", "scroll"],
+				"pTypes": ["str", "str", "?"],
+				"shortDesc": "SelectItem",
+				"subf": {}
+			},
+			"SelectItemByIndex": {
+				"abbrev": "",
+				"desc": "SelectItemByIndex",
+				"name": "SelectItemByIndex",
+				"pNames": ["index", "scroll"],
+				"pTypes": ["num", "?"],
+				"shortDesc": "SelectItemByIndex",
+				"subf": {}
+			},
+			"SetBackAlpha": "#1162431318",
+			"SetBackColor": "#3857861627",
+			"SetBackGradient": "#7112142192",
+			"SetBackGradientRadial": "#1101641465",
+			"SetBackground": "#1239127541",
+			"SetColorFilter": "#1096996086",
+			"SetColumnWidths": {
+				"abbrev": "",
+				"desc": "SetColumnWidths",
+				"name": "SetColumnWidths",
+				"pNames": ["icon", "title", "body", "mode"],
+				"pTypes": ["?", "str", "str", "?"],
+				"shortDesc": "SetColumnWidths",
+				"subf": {}
+			},
+			"SetDivider": {
+				"abbrev": "",
+				"desc": "SetDivider",
+				"name": "SetDivider",
+				"pNames": ["height", "color"],
+				"pTypes": ["num", "str_col"],
+				"shortDesc": "SetDivider",
+				"subf": {}
+			},
+			"SetEllipsize": "#0897234673",
+			"SetEllipsize1": {
+				"abbrev": "",
+				"desc": "SetEllipsize1",
+				"name": "SetEllipsize1",
+				"pNames": ["mode"],
+				"pTypes": ["?"],
+				"shortDesc": "SetEllipsize1",
+				"subf": {}
+			},
+			"SetEllipsize2": {
+				"abbrev": "",
+				"desc": "SetEllipsize2",
+				"name": "SetEllipsize2",
+				"pNames": ["mode"],
+				"pTypes": ["?"],
+				"shortDesc": "SetEllipsize2",
+				"subf": {}
+			},
+			"SetEnabled": "#1602385882",
+			"SetFontFile": "#0197498372",
+			"SetHiTextColor1": {
+				"abbrev": "",
+				"desc": "SetHiTextColor1",
+				"name": "SetHiTextColor1",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetHiTextColor1",
+				"subf": {}
+			},
+			"SetHiTextColor2": {
+				"abbrev": "",
+				"desc": "SetHiTextColor2",
+				"name": "SetHiTextColor2",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetHiTextColor2",
+				"subf": {}
+			},
+			"SetList": {
+				"abbrev": "",
+				"desc": "SetList",
+				"name": "SetList",
+				"pNames": ["list", "delim"],
+				"pTypes": ["?", "str"],
+				"shortDesc": "SetList",
+				"subf": {}
 			},
 			"SetMargins": "#1741900074",
+			"SetOnLongTouch": "#2735982374",
 			"SetOnTouch": "#2398750419",
-			"SetPosition": "#1425862386"
+			"SetPosition": "#1425862386",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetTextColor": "#0175303923",
+			"SetTextColor1": {
+				"abbrev": "",
+				"desc": "SetTextColor1",
+				"name": "SetTextColor1",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTextColor1",
+				"subf": {}
+			},
+			"SetTextColor2": {
+				"abbrev": "",
+				"desc": "SetTextColor2",
+				"name": "SetTextColor2",
+				"pNames": ["clr"],
+				"pTypes": ["?"],
+				"shortDesc": "SetTextColor2",
+				"subf": {}
+			},
+			"SetTextMargins": {
+				"abbrev": "",
+				"desc": "SetTextMargins",
+				"name": "SetTextMargins",
+				"pNames": ["left", "top", "right", "bottom", "mode", "options"],
+				"pTypes": ["?", "?", "?", "?", "?", "str_com"],
+				"shortDesc": "SetTextMargins",
+				"subf": {}
+			},
+			"SetTextShadow": "#1093247031",
+			"SetTextShadow1": {
+				"abbrev": "",
+				"desc": "SetTextShadow1",
+				"name": "SetTextShadow1",
+				"pNames": ["radius", "dx", "dy", "color"],
+				"pTypes": ["num", "num", "num", "str_col"],
+				"shortDesc": "SetTextShadow1",
+				"subf": {}
+			},
+			"SetTextShadow2": {
+				"abbrev": "",
+				"desc": "SetTextShadow2",
+				"name": "SetTextShadow2",
+				"pNames": ["radius", "dx", "dy", "color"],
+				"pTypes": ["num", "num", "num", "str_col"],
+				"shortDesc": "SetTextShadow2",
+				"subf": {}
+			},
+			"SetTextSize": "#5019790423",
+			"SetTextSize1": {
+				"abbrev": "",
+				"desc": "SetTextSize1",
+				"name": "SetTextSize1",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTextSize1",
+				"subf": {}
+			},
+			"SetTextSize2": {
+				"abbrev": "",
+				"desc": "SetTextSize2",
+				"name": "SetTextSize2",
+				"pNames": ["size", "mode"],
+				"pTypes": ["?", "?"],
+				"shortDesc": "SetTextSize2",
+				"subf": {}
+			},
+			"SetVisibility": "#1004824195",
+			"Show": "#1243391562",
+			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateRadioButtons": {
 		"abbrev": "rdb",
-		"desc": "CreateRadioButtons",
+		"desc": "Creates a radio button control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
 		"name": "CreateRadioButtons",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["list", "width", "height", "color", "backColor", "orientation"],
+		"pTypes": ["lst-A comma separated strings", "num", "num", "str_col-Optional", "str_col-Optional", "str-Can be Vertical|Horizontal"],
 		"retval": "obj",
-		"shortDesc": "CreateRadioButtons",
+		"shortDesc": "Creates a radio button control.",
 		"subf": {
+			"SetOnSelect": {
+                "abbrev": "",
+				"desc": "Calls a function when the user selects an item in the list",
+				"name": "CheckItemByIndex",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"shortDesc": "Calls a function when the user selects an item in the list",
+				"subf": {}
+            },
 			"CheckItemByIndex": {
 				"abbrev": "",
-				"desc": "CheckItemByIndex",
+				"desc": "Checks a corresponding item",
 				"name": "CheckItemByIndex",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "CheckItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Checks a corresponding item",
 				"subf": {}
 			},
 			"GetCheckItem": {
 				"abbrev": "",
-				"desc": "GetCheckItem",
+				"desc": "Gets the checked item in the list",
 				"name": "GetCheckItem",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetCheckItem",
+				"retval": "str-title,index",
+				"shortDesc": "Gets the checked item in the list",
 				"subf": {}
-			},
+            },
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
-			"Radio": {
-				"desc": "Radio",
-				"isval": true,
-				"name": "Radio",
-				"retval": "?",
-				"shortDesc": "Radio"
-			},
 			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
 			"SetPosition": "#1425862386",
 			"Show": "#1243391562",
 			"Toggle": {
 				"abbrev": "",
-				"desc": "Toggle",
+				"desc": "Show or Hide the list",
 				"name": "Toggle",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Toggle",
+				"shortDesc": "Show or Hide the list",
 				"subf": {}
-			}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetItem": {
+                "abbrev": "",
+				"desc": "Returns the corresponding item",
+				"name": "GetItem",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"retval": "str-title",
+				"shortDesc": "Returns the corresponding item",
+				"subf": {}
+            },
+            "GetLeft": "#1237814406",
+            "GetList": {
+                "abbrev": "",
+				"desc": "Gets the list",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "lst-Array of titles",
+				"shortDesc": "Gets the list",
+				"subf": {}
+            },
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Radio",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"SetEnabled": "#1602385882",
+			"SetOnLongTouch": "#2735982374",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateRadioMaterial": {
 		"abbrev": "rdm",
-		"desc": "CreateRadioMaterial",
+		"desc": "Creates a material radio control. A radio control allows the user to select only one item in a list. For selecting multiple items in a list, use checkbox.",
 		"name": "CreateRadioMaterial",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["list", "width", "height", "color", "backColor", "orientation"],
+		"pTypes": ["lst-A comma separated strings", "num", "num", "str_col-Optional", "str_col-Optional", "str-Can be Vertical|Horizontal"],
 		"retval": "obj",
-		"shortDesc": "CreateRadioMaterial",
+		"shortDesc": "Creates a material radio control.",
 		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+				"desc": "Calls a function when the user selects an item in the list",
+				"name": "CheckItemByIndex",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (title, index)"],
+				"shortDesc": "Calls a function when the user selects an item in the list",
+				"subf": {}
+            },
 			"CheckItemByIndex": {
 				"abbrev": "",
-				"desc": "CheckItemByIndex",
+				"desc": "Checks a corresponding item",
 				"name": "CheckItemByIndex",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "CheckItemByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Checks a corresponding item",
 				"subf": {}
 			},
 			"GetCheckItem": {
 				"abbrev": "",
-				"desc": "GetCheckItem",
+				"desc": "Gets the checked item in the list",
 				"name": "GetCheckItem",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetCheckItem",
+				"retval": "str-title,index",
+				"shortDesc": "Gets the checked item in the list",
 				"subf": {}
-			},
+            },
 			"GetVisibility": "#1672373665",
 			"Hide": "#5372805812",
-			"Radio": {
-				"desc": "Radio",
-				"isval": true,
-				"name": "Radio",
-				"retval": "?",
-				"shortDesc": "Radio"
-			},
 			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
 			"SetPosition": "#1425862386",
 			"Show": "#1243391562",
 			"Toggle": {
 				"abbrev": "",
-				"desc": "Toggle",
+				"desc": "Show or Hide the list",
 				"name": "Toggle",
 				"pNames": [],
 				"pTypes": [],
-				"shortDesc": "Toggle",
+				"shortDesc": "Show or Hide the list",
 				"subf": {}
-			}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetItem": {
+                "abbrev": "",
+				"desc": "Returns the corresponding item",
+				"name": "GetItem",
+				"pNames": ["index"],
+				"pTypes": ["num_int"],
+				"retval": "str-title",
+				"shortDesc": "Returns the corresponding item",
+				"subf": {}
+            },
+            "GetLeft": "#1237814406",
+            "GetList": {
+                "abbrev": "",
+				"desc": "Gets the list",
+				"name": "GetList",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "lst-Array of titles",
+				"shortDesc": "Gets the list",
+				"subf": {}
+            },
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Radio",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+			"SetEnabled": "#1602385882",
+			"SetOnLongTouch": "#2735982374",
+			"SetScale": "#1990464376",
+			"SetSize": "#1296070870",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
 		}
-	},
+    },
+
+
+    
+    
+
+
 	"CreateSeekBar": {
 		"abbrev": "skb",
 		"desc": "CreateSeekBar",
@@ -3063,15 +3456,19 @@
 				"shortDesc": "TextEdit"
 			}
 		}
-	},
+    },
+    
+
+
+
 	"CreateTextH1": {
 		"abbrev": "txh",
-		"desc": "CreateTextH1",
+		"desc": "Creates a heading text 1",
 		"name": "CreateTextH1",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH1",
+		"shortDesc": "Creates a heading text 1",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3211,12 +3608,12 @@
 	},
 	"CreateTextH2": {
 		"abbrev": "txh",
-		"desc": "CreateTextH2",
+		"desc": "Creates a heading text ",
 		"name": "CreateTextH2",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH2",
+		"shortDesc": "Creates a heading text 2",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3356,12 +3753,12 @@
 	},
 	"CreateTextH3": {
 		"abbrev": "txh",
-		"desc": "CreateTextH3",
+		"desc": "Creates a heading text 3",
 		"name": "CreateTextH3",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH3",
+		"shortDesc": "Creates a heading text 3",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3501,12 +3898,12 @@
 	},
 	"CreateTextH4": {
 		"abbrev": "txh",
-		"desc": "CreateTextH4",
+		"desc": "Creates a heading text 4",
 		"name": "CreateTextH4",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH4",
+		"shortDesc": "Creates a heading text 4",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3646,12 +4043,12 @@
 	},
 	"CreateTextH5": {
 		"abbrev": "txh",
-		"desc": "CreateTextH5",
+		"desc": "Creates a heading text 5",
 		"name": "CreateTextH5",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH5",
+		"shortDesc": "Creates a heading text 5",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3791,12 +4188,12 @@
 	},
 	"CreateTextH6": {
 		"abbrev": "txh",
-		"desc": "CreateTextH6",
+		"desc": "Creates a heading text 6",
 		"name": "CreateTextH6",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextH6",
+		"shortDesc": "Creates a heading text 6",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -3936,12 +4333,12 @@
 	},
 	"CreateTextJumbo": {
 		"abbrev": "txj",
-		"desc": "CreateTextJumbo",
+		"desc": "Creates an extra large text",
 		"name": "CreateTextJumbo",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateTextJumbo",
+		"shortDesc": "Creates an extra large text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -4081,12 +4478,12 @@
 	},
 	"CreateTextParagraph": {
 		"abbrev": "txp",
-		"desc": "CreateTextParagraph",
+		"desc": "Creates a paragraph text",
 		"name": "CreateTextParagraph",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextParagraph",
+		"shortDesc": "Creates a paragraph text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -4226,12 +4623,12 @@
 	},
 	"CreateTextSecondary": {
 		"abbrev": "txs",
-		"desc": "CreateTextSecondary",
+		"desc": "Creates a secondary text",
 		"name": "CreateTextSecondary",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["text", "width", "height", "options", "color", "fontWeight"],
+		"pTypes": ["str", "num", "num", "str-DS text options", "str_col", "str-Can be Thin|Light|Regular|Medium|Bold"],
 		"retval": "obj",
-		"shortDesc": "CreateTextSecondary",
+		"shortDesc": "Creates a secondary text",
 		"subf": {
 			"AdjustColor": "#1794786072",
 			"Animate": "#8294739481",
@@ -4368,7 +4765,11 @@
 			"Show": "#1243391562",
 			"Tween": "#2114624769"
 		}
-	},
+    },
+    
+
+
+
 	"CreateTimePicker": {
 		"abbrev": "tmp",
 		"desc": "CreateTimePicker",
