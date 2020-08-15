@@ -24,7 +24,11 @@
 	"#1924613953": { "name": "Dismiss",
 		"desc": "Hide the control and remove it from the screen.",
 		"shortDesc": "Hides the control and removes it from the screen"
-	},
+    },
+    "#1924613325": { "name": "Destroy",
+        "desc": "Destroys the control completely",
+		"shortDesc": "Destroys the control completely"
+    },
 	"#1500174100": { "name": "Explode",
 		"desc": "Destroys the control with an explode animation and sound.",
 		"shortDesc": "Destroy the control with a huge explosion"
