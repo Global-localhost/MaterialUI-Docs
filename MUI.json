@@ -1199,7 +1199,7 @@
                 "desc": "Calls a function when a user click the OK button",
                 "name": "SetOnSelect",
                 "pNames": ["callback"],
-                "pTypes": ["fnc-Call function. Passes ('yyyy-mm-dd')"],
+                "pTypes": ["fnc-Call function. Passes ('yyyy-mm-dd', yyyy, mm, dd)"],
                 "shortDesc": "SetOnSelect",
                 "subf": {}
             },
@@ -2769,698 +2769,2044 @@
 			"Tween": "#2114624769"
 		}
     },
-
-
-    
-    
-
-
 	"CreateSeekBar": {
 		"abbrev": "skb",
-		"desc": "CreateSeekBar",
+		"desc": "An MUI implementation of a basic seekbar.",
 		"name": "CreateSeekBar",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["value", "range", "width", "color"],
+		"pTypes": ["num-Must be between 0 and range", "num-The maximum value of your seekbar", "num", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateSeekBar",
+		"shortDesc": "An MUI implementation of a basic seekbar.",
 		"subf": {
 			"GetValue": {
 				"abbrev": "",
-				"desc": "GetValue",
+				"desc": "Get the current value of the seekbar.",
 				"name": "GetValue",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
+				"retval": "num",
 				"shortDesc": "GetValue",
 				"subf": {}
 			},
-			"IsEnabled": "#1744802827",
-			"SeekBar": {
-				"desc": "SeekBar",
-				"isval": true,
-				"name": "SeekBar",
-				"retval": "?",
-				"shortDesc": "SeekBar"
-			},
 			"SetDecimals": {
 				"abbrev": "",
-				"desc": "SetDecimals",
+				"desc": "Set the number of decimals to the value",
 				"name": "SetDecimals",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["decimals"],
+				"pTypes": ["num_int-The number of decimals"],
 				"shortDesc": "SetDecimals",
 				"subf": {}
-			},
-			"SetEnabled": "#1602385882",
-			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
-			"SetPosition": "#1425862386",
+            },
+            "SetOnTouch": {
+                "abbrev": "",
+				"desc": "Calls a function when the seekbar is touch. Returns the value to the callback.",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (value) to the callback."],
+				"shortDesc": "Calls a function when the seekbar is touch",
+				"subf": {}
+            },
 			"SetValue": {
 				"abbrev": "",
-				"desc": "SetValue",
+				"desc": "Sets a new value to the seekbar.",
 				"name": "SetValue",
-				"pNames": ["t"],
-				"pTypes": ["?"],
+				"pNames": ["value"],
+				"pTypes": ["num-Must be between 0 and range"],
 				"shortDesc": "SetValue",
 				"subf": {}
-			}
-		}
-	},
-	"CreateSwitch": {
-		"abbrev": "swt",
-		"desc": "CreateSwitch",
-		"name": "CreateSwitch",
-		"pNames": ["t", "e"],
-		"pTypes": ["?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateSwitch",
-		"subf": {
-			"GetChecked": {
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
 				"abbrev": "",
-				"desc": "GetChecked",
-				"name": "GetChecked",
+				"desc": "GetType",
+				"name": "GetType",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetChecked",
+				"retval": "str-Seekbar",
+				"shortDesc": "GetType",
 				"subf": {}
 			},
-			"SetChecked": {
-				"abbrev": "",
-				"desc": "SetChecked",
-				"name": "SetChecked",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetChecked",
-				"subf": {}
-			},
-			"SetMargins": "#1741900074",
-			"SetOnTouch": "#2398750419",
-			"SetPosition": "#1425862386",
-			"Switch": {
-				"desc": "Switch",
-				"isval": true,
-				"name": "Switch",
-				"retval": "?",
-				"shortDesc": "Switch"
-			}
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+            "SetEnabled": "#1602385882",
+            "SetPosition":"#1425862386",
+			"SetSize": "#1296070870",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
 		}
-	},
+    },
+	"CreateSwitch": {
+		"abbrev": "swt",
+		"desc": "Creates a switch that can be toggled on and off.",
+		"name": "CreateSwitch",
+		"pNames": ["value", "color"],
+		"pTypes": ["bin", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates a switch that can be toggled on and off.",
+		"subf": {
+			"GetValue": {
+				"abbrev": "",
+				"desc": "Get the current value of the switch",
+				"name": "GetValue",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "bin",
+				"shortDesc": "GetValue",
+				"subf": {}
+            },
+            "SetOnTouch":{
+                "abbrev": "",
+				"desc": "Calls a function when switch is click",
+				"name": "SetOnTouch",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes boolean"],
+				"shortDesc": "Calls a function when switch is click",
+				"subf": {}
+            },
+            "SetValue":{
+                "abbrev": "",
+				"desc": "Sets the value of the switch",
+				"name": "SetValue",
+				"pNames": ["value"],
+				"pTypes": ["bin"],
+				"shortDesc": "Sets the value of the switch",
+				"subf": {}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Seekbar",
+				"shortDesc": "GetType",
+				"subf": {}
+			},
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+            "SetEnabled": "#1602385882",
+            "SetPosition":"#1425862386",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
+		}
+    },
 	"CreateTabFixed": {
 		"abbrev": "tbf",
-		"desc": "CreateTabFixed",
+		"desc": "Creates a simple fixed tab.",
 		"name": "CreateTabFixed",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["title", "width", "height", "options", "color", "animation"],
+		"pTypes": ["str", "num", "num", "str-A comma separated DS layout options", "str_col-Optional", "bin"],
 		"retval": "obj",
-		"shortDesc": "CreateTabFixed",
+		"shortDesc": "Creates a simple fixed tab.",
 		"subf": {
 			"GetLayout": {
 				"abbrev": "",
-				"desc": "GetLayout",
+				"desc": "Get the corresponding layout of a given name where you can add your controls",
 				"name": "GetLayout",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"retval": "obj",
-				"shortDesc": "GetLayout",
+				"pNames": ["name"],
+				"pTypes": ["str-The layout name"],
+				"retval": "obj-DS layout object with options that you pass in the param",
+				"shortDesc": "Get the corresponding layout of a given name",
 				"subf": {}
 			},
 			"SetActiveTabByIndex": {
 				"abbrev": "",
-				"desc": "SetActiveTabByIndex",
+				"desc": "Open the a tab by passing an index",
 				"name": "SetActiveTabByIndex",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetActiveTabByIndex",
+				"pNames": ["index"],
+				"pTypes": ["num"],
+				"shortDesc": "Open the a tab by passing an index",
 				"subf": {}
 			},
 			"SetOnSelect": {
 				"abbrev": "",
-				"desc": "SetOnSelect",
+				"desc": "Calls a function when the tab is click.",
 				"name": "SetOnSelect",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnSelect",
+				"pNames": ["callback"],
+				"pTypes": ["fnc-Callback function. Passes (name, index)"],
+				"shortDesc": "Calls a function when the tab is click.",
+				"subf": {}
+            },
+            "Animate": "#8294739481",
+			"ClearFocus": "#1362225380",
+			"Focus": "#7324472769",
+			"GetAbsHeight": "#1197564340",
+			"GetAbsWidth": "#1128215329",
+            "GetHeight": "#2576212953",
+            "GetLeft": "#1237814406",
+			"GetParent": "#3557841648",
+			"GetPosition": "#1605064214",
+			"GetTop": "#1981028136",
+			"GetType": {
+				"abbrev": "",
+				"desc": "GetType",
+				"name": "GetType",
+				"pNames": [],
+				"pTypes": [],
+				"retval": "str-Tab",
+				"shortDesc": "GetType",
 				"subf": {}
 			},
-			"Tab": {
-				"desc": "Tab",
-				"isval": true,
-				"name": "Tab",
-				"retval": "?",
-				"shortDesc": "Tab"
-			}
+			"GetWidth": "#1321469131",
+			"Gone": "#5528553362",
+			"IsEnabled": "#1744802827",
+			"IsOverlap": "#1785728721",
+			"IsVisible": "#1814300863",
+            "SetEnabled": "#1602385882",
+            "SetPosition":"#1425862386",
+			"SetVisibility": "#1004824195",
+			"Tween": "#2114624769"
 		}
-	},
+    },
 	"CreateTEFilledIconLeft": {
 		"abbrev": "tef",
-		"desc": "CreateTEFilledIconLeft",
+		"desc": "Creates a filled text input with icon on the left",
 		"name": "CreateTEFilledIconLeft",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["width", "options", "icon", "hint", "label", "color"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTEFilledIconLeft",
+		"shortDesc": "Creates a filled text input with icon on the left",
 		"subf": {
-			"Icon": {
-				"desc": "Icon",
-				"isval": true,
-				"name": "Icon",
-				"retval": "?",
-				"shortDesc": "Icon"
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+            "ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
 	},
 	"CreateTEFilledIconRight": {
 		"abbrev": "tef",
-		"desc": "CreateTEFilledIconRight",
+		"desc": "Creates a filled text input with icon on the right",
 		"name": "CreateTEFilledIconRight",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["width", "options", "icon", "hint", "label", "color"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint or label text", "bin-Show or hide label", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTEFilledIconRight",
+		"shortDesc": "Creates a filled text input with icon on the right",
 		"subf": {
-			"Icon": {
-				"desc": "Icon",
-				"isval": true,
-				"name": "Icon",
-				"retval": "?",
-				"shortDesc": "Icon"
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTEOutlineIconLeft": {
-		"abbrev": "teo",
-		"desc": "CreateTEOutlineIconLeft",
-		"name": "CreateTEOutlineIconLeft",
-		"pNames": ["t", "e", "i", "a", "l", "o", "s"],
-		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTEOutlineIconLeft",
-		"subf": {
-			"Icon": {
-				"desc": "Icon",
-				"isval": true,
-				"name": "Icon",
-				"retval": "?",
-				"shortDesc": "Icon"
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTEOutlineIconRight": {
-		"abbrev": "teo",
-		"desc": "CreateTEOutlineIconRight",
-		"name": "CreateTEOutlineIconRight",
-		"pNames": ["t", "e", "i", "a", "l", "o", "s"],
-		"pTypes": ["?", "?", "?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTEOutlineIconRight",
-		"subf": {
-			"Icon": {
-				"desc": "Icon",
-				"isval": true,
-				"name": "Icon",
-				"retval": "?",
-				"shortDesc": "Icon"
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTESearchElegant": {
-		"abbrev": "tes",
-		"desc": "CreateTESearchElegant",
-		"name": "CreateTESearchElegant",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTESearchElegant",
-		"subf": {
-			"GetCursorLine": {
-				"abbrev": "",
-				"desc": "GetCursorLine",
-				"name": "GetCursorLine",
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetCursorLine",
+				"shortDesc": "Clear input history",
 				"subf": {}
-			},
-			"GetCursorPos": {
-				"abbrev": "",
-				"desc": "GetCursorPos",
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
 				"name": "GetCursorPos",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
-				"shortDesc": "GetCursorPos",
+				"shortDesc": "Get cursor position",
 				"subf": {}
-			},
-			"GetSelectedText": {
-				"abbrev": "",
-				"desc": "GetSelectedText",
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
 				"name": "GetSelectedText",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
 				"shortDesc": "GetSelectedText",
 				"subf": {}
-			},
-			"GetSelectionEnd": {
-				"abbrev": "",
-				"desc": "GetSelectionEnd",
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
 				"name": "GetSelectionEnd",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
 				"shortDesc": "GetSelectionEnd",
 				"subf": {}
-			},
-			"GetSelectionStart": {
-				"abbrev": "",
-				"desc": "GetSelectionStart",
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
 				"name": "GetSelectionStart",
 				"pNames": [],
 				"pTypes": [],
-				"retval": "obj",
 				"shortDesc": "GetSelectionStart",
 				"subf": {}
-			},
-			"GetText": "#2387569276",
-			"GetVisibility": "#1672373665",
-			"Hide": "#5372805812",
-			"Icon": {
-				"desc": "Icon",
-				"isval": true,
-				"name": "Icon",
-				"retval": "?",
-				"shortDesc": "Icon"
-			},
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"ReplaceText": {
-				"abbrev": "",
-				"desc": "ReplaceText",
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
 				"name": "ReplaceText",
-				"pNames": ["t", "e", "i"],
-				"pTypes": ["?", "?", "?"],
-				"shortDesc": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
 				"subf": {}
-			},
-			"SetCursorColor": {
-				"abbrev": "",
-				"desc": "SetCursorColor",
-				"name": "SetCursorColor",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetCursorColor",
-				"subf": {}
-			},
-			"SetCursorPos": {
-				"abbrev": "",
-				"desc": "SetCursorPos",
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
 				"name": "SetCursorPos",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
 				"subf": {}
-			},
-			"SetEnabled": "#1602385882",
-			"SetOnChange": "#2137502353",
-			"SetOnEnter": {
-				"abbrev": "",
-				"desc": "SetOnEnter",
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"name": "SetOnEnter",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
 				"subf": {}
-			},
-			"SetText": "#8207502354",
-			"SetVisibility": "#1004824195",
-			"Show": "#1243391562",
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
+	"CreateTEOutlineIconLeft": {
+		"abbrev": "teo",
+		"desc": "Creates a material outlined text input with icon on the left.",
+		"name": "CreateTEOutlineIconLeft",
+		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates a material outlined text input with icon on the left.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
+	"CreateTEOutlineIconRight": {
+		"abbrev": "teo",
+		"desc": "Creates a material outlined text input with icon on the right.",
+		"name": "CreateTEOutlineIconRight",
+		"pNames": ["width", "options", "icon", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "str-A comma separated DS TextEdit options", "str-Material icon font", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates a material outlined text input with icon on the right.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
+	"CreateTESearchElegant": {
+		"abbrev": "tes",
+		"desc": "Creates an elegant text input",
+		"name": "CreateTESearchElegant",
+		"pNames": ["width", "hint", "icon", "iconPos", "color", "option"],
+		"pTypes": ["num", "str-Hint text", "str-Materila icon font", "str-Icon position Right|Left", "str_col-Optional", "str-Comma separated string Small|Normal|Border"],
+		"retval": "obj",
+		"shortDesc": "Creates an elegant text input",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
 	"CreateTESearchUnique": {
 		"abbrev": "tes",
-		"desc": "CreateTESearchUnique",
+		"desc": "Creates a unique text input",
 		"name": "CreateTESearchUnique",
-		"pNames": ["t", "e", "i", "a"],
-		"pTypes": ["?", "?", "?", "?"],
+		"pNames": ["width", "hint", "icon", "iconColor"],
+		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateTESearchUnique",
+		"shortDesc": "Creates a unique text input",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
 	"CreateTextAreaFilled": {
 		"abbrev": "taf",
-		"desc": "CreateTextAreaFilled",
+		"desc": "Creates a material filled textarea",
 		"name": "CreateTextAreaFilled",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["width", "height", "hint", "label", "color"],
+		"pTypes": ["num", "num", "str-Hint text", "bin-Show or hide label", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateTextAreaFilled",
+		"shortDesc": "Creates a material filled textarea",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
 	"CreateTextAreaFilledA": {
 		"abbrev": "taf",
-		"desc": "CreateTextAreaFilledA",
+		"desc": "Creates an active filled textarea.",
 		"name": "CreateTextAreaFilledA",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["width", "height", "hint", "label", "color"],
+		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Hides or show label", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTextAreaFilledA",
+		"shortDesc": "Creates an active filled textarea.",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
 	"CreateTextAreaOutline": {
 		"abbrev": "tao",
-		"desc": "CreateTextAreaOutline",
+		"desc": "Creates an outlined material textarea.",
 		"name": "CreateTextAreaOutline",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["width", "height", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTextAreaOutline",
+		"shortDesc": "Creates an outlined material textarea.",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
 	"CreateTextAreaOutlineA": {
 		"abbrev": "tao",
-		"desc": "CreateTextAreaOutlineA",
+		"desc": "Creates an active outlined material textarea.",
 		"name": "CreateTextAreaOutlineA",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
+		"pNames": ["width", "height", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "num", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTextAreaOutlineA",
+		"shortDesc": "Creates an active outlined material textarea.",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
-	},
+    },
 	"CreateTextEditFilled": {
 		"abbrev": "tef",
-		"desc": "CreateTextEditFilled",
+		"desc": "Creates the most common type of material text input.",
 		"name": "CreateTextEditFilled",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["width", "options", "hint", "label", "color"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTextEditFilled",
+		"shortDesc": "Creates the most common type of material text input.",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
 	},
 	"CreateTextEditFilledA": {
 		"abbrev": "tef",
-		"desc": "CreateTextEditFilledA",
+		"desc": "Creates an active filled material text input.",
 		"name": "CreateTextEditFilledA",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
+		"pNames": ["width", "options", "hint", "label", "color"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional"],
 		"retval": "obj",
-		"shortDesc": "CreateTextEditFilledA",
+		"shortDesc": "Creates an active filled material text input.",
 		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTextEditOutline": {
-		"abbrev": "teo",
-		"desc": "CreateTextEditOutline",
-		"name": "CreateTextEditOutline",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTextEditOutline",
-		"subf": {
-			"GetText": "#2387569276",
-			"Hide": "#5372805812",
-			"IsVisible": "#1814300863",
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"SetOnChange": "#2137502353",
-			"SetOnEnter": {
-				"abbrev": "",
-				"desc": "SetOnEnter",
-				"name": "SetOnEnter",
-				"pNames": ["t"],
-				"pTypes": ["?"],
-				"shortDesc": "SetOnEnter",
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
 				"subf": {}
-			},
-			"SetOnTouch": "#2398750419",
-			"SetText": "#8207502354",
-			"Show": "#1243391562",
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTextEditOutlineA": {
-		"abbrev": "teo",
-		"desc": "CreateTextEditOutlineA",
-		"name": "CreateTextEditOutlineA",
-		"pNames": ["t", "e", "i", "a", "l", "o"],
-		"pTypes": ["?", "?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTextEditOutlineA",
-		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTextEditSearch": {
-		"abbrev": "tes",
-		"desc": "CreateTextEditSearch",
-		"name": "CreateTextEditSearch",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTextEditSearch",
-		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
-		}
-	},
-	"CreateTextEditUnique": {
-		"abbrev": "teu",
-		"desc": "CreateTextEditUnique",
-		"name": "CreateTextEditUnique",
-		"pNames": ["t", "e", "i", "a", "l"],
-		"pTypes": ["?", "?", "?", "?", "?"],
-		"retval": "obj",
-		"shortDesc": "CreateTextEditUnique",
-		"subf": {
-			"Layout": {
-				"desc": "Layout",
-				"isval": true,
-				"name": "Layout",
-				"retval": "?",
-				"shortDesc": "Layout"
-			},
-			"TextEdit": {
-				"desc": "TextEdit",
-				"isval": true,
-				"name": "TextEdit",
-				"retval": "?",
-				"shortDesc": "TextEdit"
-			}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
 		}
     },
-    
-
-
-
+	"CreateTextEditOutline": {
+		"abbrev": "teo",
+		"desc": "Creates an outlined material text input.",
+		"name": "CreateTextEditOutline",
+		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates an outlined material text input.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
+	"CreateTextEditOutlineA": {
+		"abbrev": "teo",
+		"desc": "Creates an active outlined material text input.",
+		"name": "CreateTextEditOutlineA",
+		"pNames": ["width", "options", "hint", "label", "color", "backColor"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint|Label text", "bin-Show or hide label", "str_col-Optional", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates an active outlined material text input.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
+	"CreateTextEditSearch": {
+		"abbrev": "tes",
+		"desc": "Creates a customize search style text input.",
+		"name": "CreateTextEditSearch",
+		"pNames": ["width", "options", "hint", "color", "backColor"],
+		"pTypes": ["num", "str-Comma separated DS TextEdit options", "str-Hint text", "str_col", "str_col-Optional"],
+		"retval": "obj",
+		"shortDesc": "Creates a customize search style text input.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
+	"CreateTextEditUnique": {
+		"abbrev": "teu",
+		"desc": "Creates a unique textedit customization.",
+		"name": "CreateTextEditUnique",
+		"pNames": ["width", "hint", "icon", "iconCOlor"],
+		"pTypes": ["num", "str-Hint text", "str-Material icon font", "str_col-Icon color"],
+		"retval": "obj",
+		"shortDesc": "Creates a unique textedit customization.",
+		"subf": {
+			"ClearFocus":"#1362225380",
+            "ClearHistory":{
+                "desc": "Clear input history",
+				"name": "ClearHistory",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Clear input history",
+				"subf": {}
+            },
+            "Focus":"#7324472769",
+            "GetCursorLine":{
+                "desc": "Get cursor line",
+				"name": "GetCursorLine",
+				"pNames": [],
+                "pTypes": [],
+                "retval":"num",
+				"shortDesc": "Get cursor line",
+				"subf": {}
+            },
+            "GetCursorPos":{
+                "desc": "Get cursor position",
+				"name": "GetCursorPos",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Get cursor position",
+				"subf": {}
+            },
+            "GetSelectedText":{
+                "desc": "GetSelectedText",
+				"name": "GetSelectedText",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectedText",
+				"subf": {}
+            },
+            "GetSelectionEnd":{
+                "desc": "GetSelectionEnd",
+				"name": "GetSelectionEnd",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionEnd",
+				"subf": {}
+            },
+            "GetSelectionStart":{
+                "desc": "GetSelectionStart",
+				"name": "GetSelectionStart",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "GetSelectionStart",
+				"subf": {}
+            },
+            "GetText":"#2387569276",
+            "GetType":"#2114624701",
+            "GetVisibility":"#1672373665",
+            "Gone":"#5528553362",
+            "InsertText":{
+                "desc": "Inserts a string at a given position.",
+				"name": "InsertText",
+				"pNames": ["text", "start"],
+				"pTypes": ["str", "num_int"],
+				"shortDesc": "Inserts a string at a given position.",
+				"subf": {}
+            },
+            "IsEnabled":"#1744802827",
+            "IsOverlap":"#1785728721",
+            "IsVisible":"#1814300863",
+            "Redo":{
+                "desc": "Redo an undone action.",
+				"name": "Redo",
+				"pNames": [],
+				"pTypes": [],
+				"shortDesc": "Redo an undone action.",
+				"subf": {}
+            },
+            "ReplaceText":{
+                "desc": "Replaces a given range in the text with some string.",
+				"name": "ReplaceText",
+				"pNames": ["text", "start", "end"],
+				"pTypes": ["str", "num_int", "num_int"],
+				"shortDesc": "Replaces a given range in the text with some string.",
+				"subf": {}
+            },
+            "SetCursorPos":{
+                "desc": "Change the curernt cursor position.",
+				"name": "SetCursorPos",
+				"pNames": ["position"],
+				"pTypes": ["num_int"],
+				"shortDesc": "Change the curernt cursor position.",
+				"subf": {}
+            },
+            "SetMargins":"#1741900074",
+            "SetOnChange":"#2137502353",
+            "SetOnEnter":{
+                "desc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"name": "SetOnEnter",
+				"pNames": ["callback"],
+				"pTypes": ["fnc"],
+				"shortDesc": "Define a callback function which is called when the user pressed 'Done' or 'Enter' on the keyboard",
+				"subf": {}
+            },
+            "SetPosition":"#1425862386",
+            "SetText":"#8207502354",
+            "Undo":{}
+		}
+    },
 	"CreateTextH1": {
 		"abbrev": "txh",
 		"desc": "Creates a heading text 1",
@@ -4766,30 +6112,34 @@
 			"Tween": "#2114624769"
 		}
     },
-    
-
-
-
 	"CreateTimePicker": {
 		"abbrev": "tmp",
-		"desc": "CreateTimePicker",
+		"desc": "Creates a material design time picker.",
 		"name": "CreateTimePicker",
-		"pNames": ["t", "e", "i"],
-		"pTypes": ["?", "?", "?"],
+		"pNames": ["hour", "minute", "color"],
+		"pTypes": ["num-[0-24]", "num-0-59", "str_col"],
 		"retval": "obj",
-		"shortDesc": "CreateTimePicker",
-		"subf": { "SetOnSelect": {
-	"abbrev": "",
-	"desc": "SetOnSelect",
-	"name": "SetOnSelect",
-	"pNames": ["t"],
-	"pTypes": ["?"],
-	"shortDesc": "SetOnSelect",
-	"subf": {}
-} }
+		"shortDesc": "Creates a material design time picker.",
+		"subf": {
+            "SetOnSelect": {
+                "abbrev": "",
+                "desc": "Calls a function when the user selects a time.",
+                "name": "SetOnSelect",
+                "pNames": ["callback"],
+                "pTypes": ["fnc-Callback function. Passes ('hh:mm AM|PM', hour, minute, pos)"],
+                "shortDesc": "Calls a function when the user selects a time.",
+                "subf": {}
+            },
+            "Show":"#1243391562",
+            "Hide":"#5372805812",
+            "Destroy":"#1924613325",
+            "GetVisibility":"#1672373665",
+            "IsVisible":"#1814300863",
+            "SetEnabled":"#1602385882"
+        }
 	},
 	"fonts": {
-		"desc": "fonts",
+		"desc": "MUI uses the free Roboto font family downloaded from <a href='www.fonts.google.com'>Google Fonts</a> as its main font for all of the controls.<br>For the icons, MUI uses the Google's Material Icon Font.",
 		"isval": true,
 		"name": "fonts",
 		"retval": "obj",
