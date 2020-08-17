@@ -1483,13 +1483,23 @@
 			"Tween": "#2114624769"
 		}
     },
+    "CreateLayout": {
+        "abbrev": "lay",
+		"desc": "It is just the CreateLayout method of DroidScript with predefined values on background color just to be consistent on MUI theming. It is highly recommended to use this method instead of directly calling CreateLayout from the app object. Since it returns a DroidScript layout, you can use all the layout methods you know.",
+		"name": "CreateLayout",
+		"pNames": ["type", "options"],
+		"pTypes": ["str-DroidScript Layout type", "str-Comma separated DroidScript layout options"],
+		"retval": "obj",
+		"shortDesc": "It is just the CreateLayout method of DroidScript with predefined values on background color.",
+		"subf": {}
+    },
 	"CreateList": {
 		"abbrev": "lst",
 		"desc": "A manipulation of the DroidScript list object.",
 		"name": "CreateList",
 		"pNames": ["list", "width", "height", "options"],
 		"pTypes": ["str", "num", "num", "str"],
-		"retval": "dso",
+		"retval": "obj",
 		"shortDesc": "CreateList",
 		"subf": {
 			"AddItem": {
